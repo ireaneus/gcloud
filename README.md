@@ -8,6 +8,7 @@ Table of Contents
 - [Case Study - TerramEarth](gcloud-terramearth)
 
 ### Websites
+
 | GCP Exam | GCP Exam | GCP Exam | GCP Exam | GCP Exam |
 | --- | --- | --- | --- | --- |
 | [medium.com](https://medium.com/@earlg3/google-cloud-architect-exam-study-materials-5ab327b62bc8) | [gcloud exams](https://cloud.google.com/training/exams/) | [gcloud practice exam](https://cloud.google.com/certification/practice-exam/cloud-architect) | [gcloud exam guide](https://cloud.google.com/certification/guides/cloud-architect/#certificate-exam-guide) | [gcloud workshop](https://goo.gl/oFp6ep) |
