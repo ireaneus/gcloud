@@ -10,7 +10,7 @@ Table of Contents
 # Websites
 | GCP Exam Website | GCP Exam Website | GCP Exam Website | GCP Exam Website | GCP Exam Website |
 | --- | --- | --- | --- | --- |
-| [medium.com study materials](https://medium.com/@earlg3/google-cloud-architect-exam-study-materials-5ab327b62bc8) | [google exams page](https://cloud.google.com/training/exams/) | [google practice exam](https://cloud.google.com/certification/practice-exam/cloud-architect) | [google exam guide](https://cloud.google.com/certification/guides/cloud-architect/#certificate-exam-guide) | [google workshop](https://goo.gl/oFp6ep) |
+| [medium.com study](https://medium.com/@earlg3/google-cloud-architect-exam-study-materials-5ab327b62bc8) | [google exams page](https://cloud.google.com/training/exams/) | [google practice exam](https://cloud.google.com/certification/practice-exam/cloud-architect) | [google exam guide](https://cloud.google.com/certification/guides/cloud-architect/#certificate-exam-guide) | [google workshop](https://goo.gl/oFp6ep) |
 
 | GCP Component Doc | GCP Component Doc | GCP Component Doc | GCP Component Doc | GCP Component Doc |
 | --- | --- | --- | --- | --- |
@@ -100,12 +100,14 @@ Everything that is created and used on GCP
 #### Labels
 - Key-value pair
 - Key: unique identifier, cannot be empty, up to 64 labels per resource
-```
+
+```sh
 [user@linuxserver] gcloud compute instances create [instance-name] --labels key=value,key=value --zone us-west1-a
 [user@linuxserver] gcloud compute instances describe instance-2 --zone us-west1-a --format 'default(labels)'
 [user@linuxserver] gcloud compute instances update instance-2 --zone us-west1-a --update-labels owner=user2,state=readyfordeletion
 [user@linuxserver] gcloud compute instances update instance-2 --zone us-west1-a --remove-labels key1,key2
 ```
+
 #### Quotas
 - Caps on resources on a per project basis
 - Quota can be increased via support ticket
@@ -178,7 +180,8 @@ Must be the Administrator account for the organization
     - Shows Members and Roles
     - Add user@email.com - Role project viewer
 #### Command line
-```
+
+```sh
 [root@cloudserver]# gcloud projects get-iam-policy PROJECT_ID > filename.yml
 
 [root@cloudserver]# gcloud projects set-iam-policy PROJECT_ID filename.yml
@@ -193,6 +196,7 @@ bindings:
 etag: BwWBQh7328=
 version: 1
 ```
+
 #### IAM Best practices
 - Principle of least privilege
 - predefined roles over primative roles
