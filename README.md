@@ -7,7 +7,7 @@ Table of Contents
 - [Case Study - Mountkirk Games](gcloud-mountkirk)
 - [Case Study - TerramEarth](gcloud-terramearth)
 
-# Websites
+## Websites
 | GCP Exam | GCP Exam | GCP Exam | GCP Exam | GCP Exam |
 | --- | --- | --- | --- | --- |
 | [medium.com study](https://medium.com/@earlg3/google-cloud-architect-exam-study-materials-5ab327b62bc8) | [google exams page](https://cloud.google.com/training/exams/) | [google practice exam](https://cloud.google.com/certification/practice-exam/cloud-architect) | [google exam guide](https://cloud.google.com/certification/guides/cloud-architect/#certificate-exam-guide) | [google workshop](https://goo.gl/oFp6ep) |
