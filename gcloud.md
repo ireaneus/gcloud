@@ -1,4 +1,4 @@
-# Google Cloud Exam - Google Cloud Certified Professional Cloud Architect
+# Google Cloud Certified Professional Cloud Architect
 [Back](README.md) to README.md
 
 Table of Contents
@@ -8,11 +8,11 @@ Table of Contents
 - [Billing](#billing)
 
 # Exam Information
-### Exam tested on:
+Exam tested on:
 - Exam is 50 questions - pass or fail
 - multiple choice 
 
-### You are tested on your:
+You are tested on your:
 - Knowledge of what Google’s cloud services are and their use cases
 - Understanding of how individual services work
 - Understanding of how Google’s services are intended to fit together
@@ -21,11 +21,11 @@ Table of Contents
 - 3 possible case studies
 - Hands on experience - create experiment break it fix it
 
-### The exam asks you to make the best choice
+The exam asks you to make the best choice
 - The right choice is not always obvious
 - Look for keywords that give you a hint
 
-### Study areas 
+Study areas 
 * Deployment manager
 * Cloud Storage
 * Cloud endpoint
@@ -55,8 +55,8 @@ Table of Contents
   - Child nodes inherit parent permissions
   - More permissive parent policy always overrules more restrictive child policy
 
-#### GC Resource Hierarchy
-##### Organization Resource
+### GC Resource Hierarchy
+Organization Resource
 - Represents an organization
 - IAM Access control policies applied to the Organization resource are applied throughout the entire hierarchy
 - Can grant access to different people in org.
@@ -64,14 +64,14 @@ Table of Contents
 - Organization - Key roles
   - Organization admin: Full power to edit all permissions
   - Organization owner: Reserved for G Suite/Cloud Identity super admin
-##### Folders
+Folders
 - Additional (optional) grouping and isolation boundary between projects
 - Collection of projects and other folders
 - IAM roles applied to folder apply to all projects inside
 - Useful for grouping by departments
 - Useful for delegating admin rights
 - Beware: Removing projects from folder will remove folder-applied IAM roles
-##### Projects
+Projects
 - CORE organizational component of GCP
 - Basis for creating, enabling, using, and paying for GCP services (i.e., everything)
 - Exam tip: Become VERY familiar working with and managing projects
@@ -80,7 +80,7 @@ Table of Contents
   - Project number (automatically generated)
   - Project name (friendly name)
     - Good practice to have identical Project name and ID
-##### Resources
+### Resources
 Everything that is created and used on GCP
 - instances
 - services
@@ -88,7 +88,7 @@ Everything that is created and used on GCP
 - Cloud Storage buckets
 - Managed services
 - IAM policies
-##### Labels
+### Labels
 - Key-value pair
 - Key: unique identifier, cannot be empty, up to 64 labels per resource
 
@@ -99,7 +99,7 @@ Everything that is created and used on GCP
 [user@linuxserver] gcloud compute instances update instance-2 --zone us-west1-a --remove-labels key1,key2
 ```
 
-##### Quotas
+### Quotas
 - Caps on resources on a per project basis
 - Quota can be increased via support ticket
 
@@ -136,14 +136,14 @@ Your active configuration is: [default]
 ```
 
 ### Roles
-#### Primitive Roles
+Primitive Roles
 - Are project-wide roles
 - Project viewer can see everything in a project
 - Project editor can change everything in a project
 - Project owner has all rights of editor and can add members
 - The primitive roles do not provide fine-grained control over what members can do
 
-#### Predefined Roles
+Predefined Roles
 - One role can’t remove permissions granted by another role
 - For example, if you make someone a Project Owner and a Storage Viewer, they have read-write access to storage
 - App Engine Admin, BigQuery User, or DataStore Viewer are examples of predefined roles
@@ -158,20 +158,19 @@ Your active configuration is: [default]
 - Google Account Types: Personal, GSuite Domain, Cloud Identity Domain, Google Group, allAuthenticatedUsers, allUsers
 
 ### IAM Policies
-#### Organization Level
+### Organization Level
 Must be the Administrator account for the organization
 - IAM Policy - default menu option
   - Shows Members and Roles
     - Organization Administrator - All powerful
     - Select top-level organization
       - add member - user@email.com - Roles: Organization viewer, Resource Manager role - Project creator, Billing account user  --  Create resources in project
-#### Project Level
+### Project Level
 - Select Project 
   - IAM & Admin web menu
     - Shows Members and Roles
     - Add user@email.com - Role project viewer
-#### Command line
-
+### Command line
 ```sh
 [root@cloudserver]# gcloud projects get-iam-policy PROJECT_ID > filename.yml
 
@@ -188,7 +187,7 @@ etag: BwWBQh7328=
 version: 1
 ```
 
-#### IAM Best practices
+### IAM Best practices
 - Principle of least privilege
 - predefined roles over primative roles
 - grant roles at smallest scope necessary
@@ -213,14 +212,12 @@ version: 1
 - set budgets and alerts
 
 # Global resources
-## Sometimes Google Cloud services seem interchangeable
+### Sometimes Google Cloud services seem interchangeable
 - BigTable or DataStore
 - BigQuery or Cloud SQL
 - App Engine or Container Engine
 
-## Global resources
-
-Global resources are accessible by any resource in any zone within the same project. When you create a global resource, you do not need to provide a scope specification. 
+> Global resources are accessible by any resource in any zone within the same project. When you create a global resource, you do not need to provide a scope specification. 
 
 ### Global resources include 
   - Firewall rules
@@ -228,21 +225,20 @@ Global resources are accessible by any resource in any zone within the same proj
   - Networks
   - Routes
   - etc.
-"
-  ● Can only be used with managed instance groups 
+
+> ● Can only be used with managed instance groups 
   ● Can include some or all configuration of a regular instance 
   ● Instance and disk names will be generated from a configurable base name 
   ● Ephemeral external IP addresses will be automatically assigned 
   ● Single-instance properties limit creation to 1 instance/group Properties.disks[].source properties.disks[].initializeParams.diskName properties.networkInterfaces.accessConfigs.natIP
-"
 
-## Multi-regional resources
+### Multi-regional resources
 - Cloud storage
 - Cloud Datastore
 - Cloud BigQuery
 
 # IaaS
-## Google Cloud Compute
+### Google Cloud Compute
 - Infrastructure as a Service (IaaS)
 - On-demand pricing, Sustained use discount, Committed use discount, Preemptible VM
 - Disks: Standard, SSD, Local SSD - Pay for allocation
