@@ -1,4 +1,4 @@
-# Google Cloud Exam - Google Cloud Certified Professional Cloud Architect
+# Google Cloud Certified Professional Cloud Architect
 
 Table of Contents
 - [Websites](#websites)
