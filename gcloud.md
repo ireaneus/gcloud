@@ -131,7 +131,8 @@ Everything that is created and used on GCP
 - A computer or application can run using a service account identity that machine will only be allowed to perform actions allowed by its roles
 - gservice generated account uses access scopes, whereas user created service accounts have scopes predefined
 - user accounts will need service account user role in order for them to ssh into compute instances
-```
+
+```sh
 [admin@instance-1]$ gcloud config list
 [core]
 account = 2345665412-compute@developer.gserviceaccount.com
