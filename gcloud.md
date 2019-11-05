@@ -227,11 +227,13 @@ version: 1
   - Routes
   - etc.
 
+```
     ● Can only be used with managed instance groups 
     ● Can include some or all configuration of a regular instance 
     ● Instance and disk names will be generated from a configurable base name 
     ● Ephemeral external IP addresses will be automatically assigned 
     ● Single-instance properties limit creation to 1 instance/group Properties.disks[].source properties.disks[].initializeParams.diskName properties.networkInterfaces.accessConfigs.natIP
+```
 
 ### Multi-regional resources
 - Cloud storage
