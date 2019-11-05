@@ -56,7 +56,7 @@ Study areas
   - More permissive parent policy always overrules more restrictive child policy
 
 ### GC Resource Hierarchy
-Organization Resource
+*Organization Resource*
 - Represents an organization
 - IAM Access control policies applied to the Organization resource are applied throughout the entire hierarchy
 - Can grant access to different people in org.
@@ -64,14 +64,14 @@ Organization Resource
 - Organization - Key roles
   - Organization admin: Full power to edit all permissions
   - Organization owner: Reserved for G Suite/Cloud Identity super admin
-Folders
+*Folders*
 - Additional (optional) grouping and isolation boundary between projects
 - Collection of projects and other folders
 - IAM roles applied to folder apply to all projects inside
 - Useful for grouping by departments
 - Useful for delegating admin rights
 - Beware: Removing projects from folder will remove folder-applied IAM roles
-Projects
+*Projects*
 - CORE organizational component of GCP
 - Basis for creating, enabling, using, and paying for GCP services (i.e., everything)
 - Exam tip: Become VERY familiar working with and managing projects
@@ -136,14 +136,14 @@ Your active configuration is: [default]
 ```
 
 ### Roles
-Primitive Roles
+*Primitive Roles*
 - Are project-wide roles
 - Project viewer can see everything in a project
 - Project editor can change everything in a project
 - Project owner has all rights of editor and can add members
 - The primitive roles do not provide fine-grained control over what members can do
 
-Predefined Roles
+*Predefined Roles*
 - One role can’t remove permissions granted by another role
 - For example, if you make someone a Project Owner and a Storage Viewer, they have read-write access to storage
 - App Engine Admin, BigQuery User, or DataStore Viewer are examples of predefined roles
@@ -171,7 +171,8 @@ Must be the Administrator account for the organization
     - Shows Members and Roles
     - Add user@email.com - Role project viewer
 ### Command line
-```sh
+
+```
 [root@cloudserver]# gcloud projects get-iam-policy PROJECT_ID > filename.yml
 
 [root@cloudserver]# gcloud projects set-iam-policy PROJECT_ID filename.yml
@@ -226,11 +227,11 @@ version: 1
   - Routes
   - etc.
 
-> ● Can only be used with managed instance groups 
-  ● Can include some or all configuration of a regular instance 
-  ● Instance and disk names will be generated from a configurable base name 
-  ● Ephemeral external IP addresses will be automatically assigned 
-  ● Single-instance properties limit creation to 1 instance/group Properties.disks[].source properties.disks[].initializeParams.diskName properties.networkInterfaces.accessConfigs.natIP
+    ● Can only be used with managed instance groups 
+    ● Can include some or all configuration of a regular instance 
+    ● Instance and disk names will be generated from a configurable base name 
+    ● Ephemeral external IP addresses will be automatically assigned 
+    ● Single-instance properties limit creation to 1 instance/group Properties.disks[].source properties.disks[].initializeParams.diskName properties.networkInterfaces.accessConfigs.natIP
 
 ### Multi-regional resources
 - Cloud storage
