@@ -1,0 +1,30 @@
+qwiklabs-gcp-1303ec67ae3e38d5
+
+gcloud config set project qwiklabs-gcp-1303ec67ae3e38d5
+
+gcloud config set compute/zone us-west1-a
+
+gcloud config set compute/region us-west1
+
+gcloud config list 
+
+export CLUSTER_NAME=httploadbalancer
+
+export ZONE=us-west1-a
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: basic-ingress
+spec:
+  backend:
+    serviceName: nginx
+    servicePort: 80
+
+kubectl create -f basic-ingress.yaml
+kubectl get ingress basic-ingress --watch
+kubectl describe ingress basic-ingress
+kubectl get ingress basic-ingress
+kubectl delete -f basic-ingress.yaml
+kubectl delete deployment nginx
+gcloud container clusters delete $CLUSTER_NAME

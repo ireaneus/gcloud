@@ -1,0 +1,62 @@
+35.197.48.50 - static vpn1
+35.185.78.72 - static vpn2
+
+gcloud compute \
+forwarding-rules create vpn-2-esp \
+--region us-east1  \
+--ip-protocol ESP  \
+--address 35.185.78.72  \
+--target-vpn-gateway vpn-2
+
+gcloud compute \
+forwarding-rules create vpn-2-udp500  \
+--region us-east1 \
+--ip-protocol UDP \
+--ports 500 \
+--address 35.185.78.72 \
+--target-vpn-gateway vpn-2
+
+gcloud compute \
+forwarding-rules create vpn-2-udp4500  \
+--region us-east1 \
+--ip-protocol UDP --ports 4500 \
+--address 35.185.78.72 \
+--target-vpn-gateway vpn-2
+
+gcloud compute \
+vpn-tunnels create tunnel1to2  \
+--peer-address 35.185.78.72 \
+--region us-west1 \
+--ike-version 2 \
+--shared-secret gcprocks \
+--target-vpn-gateway vpn-1 \  
+--local-traffic-selector 0.0.0.0/0 \
+--remote-traffic-selector 0.0.0.0/0
+
+gcloud compute \
+vpn-tunnels create tunnel2to1 \
+--peer-address 35.197.48.50 \
+--region us-east1 \
+--ike-version 2 \
+--shared-secret gcprocks \
+--target-vpn-gateway vpn-2 \
+--local-traffic-selector 0.0.0.0/0 \
+--remote-traffic-selector 0.0.0.0/0
+
+gcloud compute addresses list
+gcloud compute target-vpn-gateways list
+gcloud compute vpn-tunnels list
+
+gcloud compute  \
+routes create route1to2  \
+--network vpn-network-1 \
+--next-hop-vpn-tunnel tunnel1to2 \
+--next-hop-vpn-tunnel-region us-west1 \
+--destination-range 10.1.3.0/24
+
+gcloud compute  \
+routes create route2to1  \
+--network vpn-network-2 \
+--next-hop-vpn-tunnel tunnel2to1 \
+--next-hop-vpn-tunnel-region us-east1 \
+--destination-range 10.5.4.0/24
