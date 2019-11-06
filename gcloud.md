@@ -6,6 +6,12 @@ Table of Contents
 - [Core Management Services](#core-management-services)
 - [Cloud IAM](#cloud-iam)
 - [Billing](#billing)
+- [Global Resources](#global-resources)
+- [IaaS](#iaas)
+- [GCP Networking](#gcp-networking)
+- [PaaS](#paas)
+- [Stackdriver](#stackdriver)
+- [CI/CD](#cicd)
 
 # Exam Information
 Exam tested on:
@@ -414,14 +420,40 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Easy to use: no indexes required, simple schemas
 - NoOps: no need to provision anything
 
-## Stackdriver suite best practices
+# Stackdriver
+**Products**
+- Logging
+- Monitoring
+- Error Reporting
+- Trace
+- Debug
+- Profiler (Beta)
+
+### Stackdriver suite best practices
 - Create a single project for stackdriver Monitoring
 - Single pane of glass for all projects activities
 - Determine monitoring needs in advance
 - IAM controls are separate for stackdriver
 
 ## StackDriver Logging
-- Stackdriver Logging is part of the Stackdriver suite of products in Google Cloud Platform (GCP). It includes storage for logs, a user interface called the Logs Viewer, and an API to manage logs programmatically. Stackdriver Logging lets you read and write log entries, search and filter your logs, export your logs, and create logs-based metrics.
+*Exam Perspective*
+- IAM Roles - Logging Admin, Logs Viewer, Logs Writer, Logs Configuration Writer
+- *Exports* 
+- Logging works with other stackdriver products
+
+*Log Types*
+- Audit Logs
+  - Audit logs are found in IAM
+  - Admin Activity/System Eventlogs - Admin actions and API calls, System events - GCE system event
+- Data Access Logs
+  - API calls that create modify or read user provided data
+  - Charge if beyond free limits
+- Agent Logs
+  - agent installs on VMs
+  - Logs 3rd-party apps
+  - Charge if beyond free limits
+
+> Stackdriver Logging is part of the Stackdriver suite of products in Google Cloud Platform (GCP). It includes storage for logs, a user interface called the Logs Viewer, and an API to manage logs programmatically. Stackdriver Logging lets you read and write log entries, search and filter your logs, export your logs, and create logs-based metrics.
 - Real-time log management and analysis
 
 ## StackDriver Monitoring
@@ -445,6 +477,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Generate custom analysis reports that show an overview of latency data for all or a subset or requests, and allow you to compare two different sets of latency data.
 - Traces are stored for 30 days.
 
+# CI/CD
 ## GCP Dataflow
 - Cloud Dataflow is a fully-managed service for transforming and enriching data in stream (real time) and batch (historical) modes with equal reliability and expressiveness -- no more complex workarounds or compromises needed. And with its serverless approach to resource provisioning and management, you have access to virtually limitless capacity to solve your biggest data processing challenges, while paying only for what you use.
 - Data Flow Fully-managed data processing service, supporting both stream and batch execution of pipelines
