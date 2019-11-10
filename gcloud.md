@@ -438,8 +438,10 @@ Target proxies are referenced by one or more global forwarding rules and route t
 ## StackDriver Logging
 *Exam Perspective*
 - IAM Roles - Logging Admin, Logs Viewer, Logs Writer, Logs Configuration Writer
-- *Exports* 
+- *Exports* - Pub/Sub, BigQuery, Cloud Storage
 - Logging works with other stackdriver products
+- Pricing 1st 50GB/Project/mo free - $0.50/GB after
+- Admin and System Event logs exempt
 
 *Log Types*
 - Audit Logs
@@ -457,7 +459,15 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Real-time log management and analysis
 
 ## StackDriver Monitoring
-- Stackdriver Monitoring collects metrics, events, and metadata from Google Cloud Platform, Amazon Web Services (AWS), hosted uptime probes, application instrumentation, and a variety of common application components including Cassandra, Nginx, Apache Web Server, Elasticsearch and many others. Stackdriver ingests that data and generates insights via dashboards, charts, and alerts.
+**Exam Perspective**
+- Troubleshoot reachability with external sources - uptime checks
+- Familiar with the logging/monitoring agent
+- Monitoring in conjunction with other Stackdriver products - Work with alerts
+- Firewall needs to allow traffic for comm.  uptime/alerts ports 80/443
+- Download source IP addresses for public http traffic to stackdriver monitoring
+
+> Stackdriver Monitoring collects metrics, events, and metadata from Google Cloud Platform, Amazon Web Services (AWS), hosted uptime probes, application instrumentation, and a variety of common application components including Cassandra, Nginx, Apache Web Server, Elasticsearch and many others. Stackdriver ingests that data and generates insights via dashboards, charts, and alerts.
+
 - Stackdriver Monitoring is available in two service tiers, Basic and Premium
 - Basic 7 days of logging 
 - Premium 30 days of logging admin.
@@ -472,7 +482,14 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Error Reporting displays errors for the currently-selected Cloud Platform Console project. It does not support Stackdriver accounts.
 
 ## StackDriver Trace
-- Stackdriver Trace is a distributed tracing system for Google Cloud Platform that collects latency data from Google App Engine, Google HTTP(S) load balancers, and applications instrumented with the Stackdriver Trace SDKs, and displays it in near real time in the Google Cloud Platform Console.
+**Exam Perspective**
+- Finds performance bottlenecks - latency in load times
+- Collect data from Google App Engine (GAE), Google HTTTP load balancers, or appw with Stackdriver Trace SDK
+- Integrated into App Engin Standard - automatically enabled
+- Available for GCE, GKE, and GAE (Flex)
+  
+> Stackdriver Trace is a distributed tracing system for Google Cloud Platform that collects latency data from Google App Engine, Google HTTP(S) load balancers, and applications instrumented with the Stackdriver Trace SDKs, and displays it in near real time in the Google Cloud Platform Console.
+
 - Quickly view a snapshot of last-day latency data for your application in the trace overview.
 - Generate custom analysis reports that show an overview of latency data for all or a subset or requests, and allow you to compare two different sets of latency data.
 - Traces are stored for 30 days.
