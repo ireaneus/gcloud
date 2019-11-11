@@ -7,6 +7,7 @@ Table of Contents
 - [Cloud IAM](#cloud-iam)
 - [Billing](#billing)
 - [Stackdriver](#stackdriver)
+- [Cloud Storage](#cloud-storage)
 - [Global Resources](#global-resources)
 - [IaaS](#iaas)
 - [GCP Networking](#gcp-networking)
@@ -292,6 +293,24 @@ version: 1
 - Generate custom analysis reports that show an overview of latency data for all or a subset or requests, and allow you to compare two different sets of latency data.
 - Traces are stored for 30 days.
 
+# Cloud Storage
+- A scalable, fully-managed, highly reliable, and cost-efficient object / blob store.
+- Images, pictures, and videos, Objects and blobs, Unstructured data
+- Storing and streaming multimedia
+- Storage for custom data analytics pipelines
+- Archive, backup, and disaster recovery
+### Nearline
+- Cost per GB is less than regional, but there is a cost for accessing data and a 1-month minimum charge
+- Use for data that is accessed infrequently (photos might be an example)
+
+### Coldline
+- Cost per GB is less than Nearline, but there is a higher cost for accessing data and a 3-month minimum charge
+- Use for data archiving, backups, and disaster recovery
+
+### Cloud Data Transfer replication 
+- Transfer google cloud buckets
+- Transfer amazon s3 buckets
+- 1GB per stream
 
 # Global resources
 ### Sometimes Google Cloud services seem interchangeable
@@ -431,25 +450,6 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Can respond to Storage changes, Pub/Sub messages, or Web requests
 - Incredibly fast and scalable
 - Very inexpensive (first 2 million requests per month are free)
-
-## Cloud Storage
-- A scalable, fully-managed, highly reliable, and cost-efficient object / blob store.
-- Images, pictures, and videos, Objects and blobs, Unstructured data
-- Storing and streaming multimedia
-- Storage for custom data analytics pipelines
-- Archive, backup, and disaster recovery
-### Nearline
-- Cost per GB is less than regional, but there is a cost for accessing data and a 1-month minimum charge
-- Use for data that is accessed infrequently (photos might be an example)
-
-### Coldline
-- Cost per GB is less than Nearline, but there is a higher cost for accessing data and a 3-month minimum charge
-- Use for data archiving, backups, and disaster recovery
-
-### Cloud Data Transfer replication 
-- Transfer google cloud buckets
-- Transfer amazon s3 buckets
-- 1GB per stream
 
 ## Cloud SQL
 - A fully-managed MySQL and PostgreSQL database service that is built on the strength and reliability of Google’s infrastructure.
