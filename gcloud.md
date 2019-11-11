@@ -6,11 +6,11 @@ Table of Contents
 - [Core Management Services](#core-management-services)
 - [Cloud IAM](#cloud-iam)
 - [Billing](#billing)
+- [Stackdriver](#stackdriver)
 - [Global Resources](#global-resources)
 - [IaaS](#iaas)
 - [GCP Networking](#gcp-networking)
 - [PaaS](#paas)
-- [Stackdriver](#stackdriver)
 - [CI/CD](#cicd)
 
 # Exam Information
@@ -218,6 +218,81 @@ version: 1
 - Export to Cloud storage and bigquery
 - set budgets and alerts
 
+# Stackdriver
+**Products**
+- Logging
+- Monitoring
+- Error Reporting
+- Trace
+- Debug
+- Profiler (Beta)
+
+### Stackdriver suite best practices
+- Create a single project for stackdriver Monitoring
+- Single pane of glass for all projects activities
+- Determine monitoring needs in advance
+- IAM controls are separate for stackdriver
+
+## StackDriver Logging
+*Exam Perspective*
+- IAM Roles - Logging Admin, Logs Viewer, Logs Writer, Logs Configuration Writer
+- *Exports* - Pub/Sub, BigQuery, Cloud Storage
+- Logging works with other stackdriver products
+- Pricing 1st 50GB/Project/mo free - $0.50/GB after
+- Admin and System Event logs exempt
+
+*Log Types*
+- Audit Logs
+  - Audit logs are found in IAM
+  - Admin Activity/System Eventlogs - Admin actions and API calls, System events - GCE system event
+- Data Access Logs
+  - API calls that create modify or read user provided data
+  - Charge if beyond free limits
+- Agent Logs
+  - agent installs on VMs
+  - Logs 3rd-party apps
+  - Charge if beyond free limits
+
+> Stackdriver Logging is part of the Stackdriver suite of products in Google Cloud Platform (GCP). It includes storage for logs, a user interface called the Logs Viewer, and an API to manage logs programmatically. Stackdriver Logging lets you read and write log entries, search and filter your logs, export your logs, and create logs-based metrics.
+- Real-time log management and analysis
+
+## StackDriver Monitoring
+**Exam Perspective**
+- Troubleshoot reachability with external sources - uptime checks
+- Familiar with the logging/monitoring agent
+- Monitoring in conjunction with other Stackdriver products - Work with alerts
+- Firewall needs to allow traffic for comm.  uptime/alerts ports 80/443
+- Download source IP addresses for public http traffic to stackdriver monitoring
+
+> Stackdriver Monitoring collects metrics, events, and metadata from Google Cloud Platform, Amazon Web Services (AWS), hosted uptime probes, application instrumentation, and a variety of common application components including Cassandra, Nginx, Apache Web Server, Elasticsearch and many others. Stackdriver ingests that data and generates insights via dashboards, charts, and alerts.
+
+- Stackdriver Monitoring is available in two service tiers, Basic and Premium
+- Basic 7 days of logging 
+- Premium 30 days of logging admin.
+- 400 days of non-admin logs
+
+## StackDriver Error reporting
+- Stackdriver Error Reporting aggregates and displays errors produced in your running cloud services.
+- Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go. To report errors from Android and iOS client applications, we recommend setting up Firebase Crash Reporting.
+- Stackdriver Error Reporting is Generally Available for Google App Engine standard environment and is a Beta feature for Google App Engine flexible environment, Google Compute Engine, and AWS EC2.
+- Reporting errors from your application can be achieved by logging application errors to Google Stackdriver Logging or by calling an API endpoint. The setup process depends on your platform; please refer to the setup guides.
+- Information in Stackdriver Error Reporting is retained for 30 days.
+- Error Reporting displays errors for the currently-selected Cloud Platform Console project. It does not support Stackdriver accounts.
+
+## StackDriver Trace
+**Exam Perspective**
+- Finds performance bottlenecks - latency in load times
+- Collect data from Google App Engine (GAE), Google HTTTP load balancers, or appw with Stackdriver Trace SDK
+- Integrated into App Engin Standard - automatically enabled
+- Available for GCE, GKE, and GAE (Flex)
+  
+> Stackdriver Trace is a distributed tracing system for Google Cloud Platform that collects latency data from Google App Engine, Google HTTP(S) load balancers, and applications instrumented with the Stackdriver Trace SDKs, and displays it in near real time in the Google Cloud Platform Console.
+
+- Quickly view a snapshot of last-day latency data for your application in the trace overview.
+- Generate custom analysis reports that show an overview of latency data for all or a subset or requests, and allow you to compare two different sets of latency data.
+- Traces are stored for 30 days.
+
+
 # Global resources
 ### Sometimes Google Cloud services seem interchangeable
 - BigTable or DataStore
@@ -420,62 +495,6 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Easy to use: no indexes required, simple schemas
 - NoOps: no need to provision anything
 
-# Stackdriver
-**Products**
-- Logging
-- Monitoring
-- Error Reporting
-- Trace
-- Debug
-- Profiler (Beta)
-
-### Stackdriver suite best practices
-- Create a single project for stackdriver Monitoring
-- Single pane of glass for all projects activities
-- Determine monitoring needs in advance
-- IAM controls are separate for stackdriver
-
-## StackDriver Logging
-*Exam Perspective*
-- IAM Roles - Logging Admin, Logs Viewer, Logs Writer, Logs Configuration Writer
-- *Exports* 
-- Logging works with other stackdriver products
-
-*Log Types*
-- Audit Logs
-  - Audit logs are found in IAM
-  - Admin Activity/System Eventlogs - Admin actions and API calls, System events - GCE system event
-- Data Access Logs
-  - API calls that create modify or read user provided data
-  - Charge if beyond free limits
-- Agent Logs
-  - agent installs on VMs
-  - Logs 3rd-party apps
-  - Charge if beyond free limits
-
-> Stackdriver Logging is part of the Stackdriver suite of products in Google Cloud Platform (GCP). It includes storage for logs, a user interface called the Logs Viewer, and an API to manage logs programmatically. Stackdriver Logging lets you read and write log entries, search and filter your logs, export your logs, and create logs-based metrics.
-- Real-time log management and analysis
-
-## StackDriver Monitoring
-- Stackdriver Monitoring collects metrics, events, and metadata from Google Cloud Platform, Amazon Web Services (AWS), hosted uptime probes, application instrumentation, and a variety of common application components including Cassandra, Nginx, Apache Web Server, Elasticsearch and many others. Stackdriver ingests that data and generates insights via dashboards, charts, and alerts.
-- Stackdriver Monitoring is available in two service tiers, Basic and Premium
-- Basic 7 days of logging 
-- Premium 30 days of logging admin.
-- 400 days of non-admin logs
-
-## StackDriver Error reporting
-- Stackdriver Error Reporting aggregates and displays errors produced in your running cloud services.
-- Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go. To report errors from Android and iOS client applications, we recommend setting up Firebase Crash Reporting.
-- Stackdriver Error Reporting is Generally Available for Google App Engine standard environment and is a Beta feature for Google App Engine flexible environment, Google Compute Engine, and AWS EC2.
-- Reporting errors from your application can be achieved by logging application errors to Google Stackdriver Logging or by calling an API endpoint. The setup process depends on your platform; please refer to the setup guides.
-- Information in Stackdriver Error Reporting is retained for 30 days.
-- Error Reporting displays errors for the currently-selected Cloud Platform Console project. It does not support Stackdriver accounts.
-
-## StackDriver Trace
-- Stackdriver Trace is a distributed tracing system for Google Cloud Platform that collects latency data from Google App Engine, Google HTTP(S) load balancers, and applications instrumented with the Stackdriver Trace SDKs, and displays it in near real time in the Google Cloud Platform Console.
-- Quickly view a snapshot of last-day latency data for your application in the trace overview.
-- Generate custom analysis reports that show an overview of latency data for all or a subset or requests, and allow you to compare two different sets of latency data.
-- Traces are stored for 30 days.
 
 # CI/CD
 ## GCP Dataflow
