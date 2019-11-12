@@ -299,13 +299,28 @@ version: 1
 - Storing and streaming multimedia
 - Storage for custom data analytics pipelines
 - Archive, backup, and disaster recovery
+
+### gsutil commands
+**gsutil top level option -m multi-threaded**
+```sh
+[root@server1]# gsutil -m cp bookshelf gs://my-bookshelf
+```
+
+### Multi-Regional
+- Span Multiple regions No retrieval costs 99.95%
+
+### Regional
+- Highest regional performance No retrieval - 99.9%
+
 ### Nearline
 - Cost per GB is less than regional, but there is a cost for accessing data and a 1-month minimum charge
 - Use for data that is accessed infrequently (photos might be an example)
+- Min 30day duration
 
 ### Coldline
 - Cost per GB is less than Nearline, but there is a higher cost for accessing data and a 3-month minimum charge
 - Use for data archiving, backups, and disaster recovery
+- Min 90day duration higher retreival cost
 
 ### Cloud Data Transfer replication 
 - Transfer google cloud buckets
