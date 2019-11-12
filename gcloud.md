@@ -304,19 +304,20 @@ version: 1
 **gsutil top level option -m multi-threaded**
 ```sh
 [root@server1]# gsutil -m cp bookshelf gs://my-bookshelf
+
+[root@server1]# gsutil iam ch user:user1@example.com:admin gs://my-project-bucket1
+
+[root@server1]# gsutil acl ch -u allUsers:R gs://my-project-bucket1/file1.png
 ```
 
 ### Multi-Regional
 - Span Multiple regions No retrieval costs 99.95%
-
 ### Regional
 - Highest regional performance No retrieval - 99.9%
-
 ### Nearline
 - Cost per GB is less than regional, but there is a cost for accessing data and a 1-month minimum charge
 - Use for data that is accessed infrequently (photos might be an example)
 - Min 30day duration
-
 ### Coldline
 - Cost per GB is less than Nearline, but there is a higher cost for accessing data and a 3-month minimum charge
 - Use for data archiving, backups, and disaster recovery
@@ -326,6 +327,38 @@ version: 1
 - Transfer google cloud buckets
 - Transfer amazon s3 buckets
 - 1GB per stream
+
+### Cloud Storage Security Concepts
+**Access Managment Principles**
+- Two methods: IAM and ACL
+- Best practice - use IAM over ACL whenever possible
+- IAM leaves an audit trail for access
+- use ACL to grant access to an object without granting access to bucket
+- IAM is bucket level access
+- Signed URLs - timed access
+- By default GCP encrypts all GCS data with Google-supplied keys
+- customer side .boto config file
+
+### Cloud Storage Signed URL
+- IAM - Service accounts - create - Storage admin - create a key json - local in console
+```sh
+[root@server1]# gsutil signurl -d 10m keyfile.json gs://my-bucket-project1/1.png
+```
+- copy and paste signed URL 
+
+### Object Versioning and Lifecycle
+- retrieve objects that are deleted or overwritten
+- Applied to bucket level
+- Object keeps same name but paired with UIN
+```sh
+[root@server1]# gsutil versioning get gs://
+[root@server1]# gsutil versioning set on gs://
+[root@server1]# gsutil ls -a gs://
+[root@server1]# gsutil cp gs://version1# gs://
+[root@server1]# gsutil mb -l us-west1 -c REGIONAL gs://bucket
+[root@server1]# gsutil versioning set off
+[root@server1]# gsutil -m rewrite -r -s NEARLINE gs://bucket/*
+```
 
 # Global resources
 ### Sometimes Google Cloud services seem interchangeable
