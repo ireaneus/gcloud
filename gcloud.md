@@ -8,6 +8,7 @@ Table of Contents
 - [Billing](#billing)
 - [Stackdriver](#stackdriver)
 - [Cloud Storage](#cloud-storage)
+- [Cloud SQL](#cloud-managed-databases)
 - [Global Resources](#global-resources)
 - [IaaS](#iaas)
 - [GCP Networking](#gcp-networking)
@@ -35,6 +36,12 @@ The exam asks you to make the best choice
 Study areas 
 * Deployment manager
 * Cloud Storage
+* Cloud SQL
+  * Storing and structuring data
+  * Retrieving and using data
+  * More in-depth than previous version
+  * BigQuery especially goes into much more details
+  * More on Datastore and Cloud SQL - how to optimize performance and scale it
 * Cloud endpoint
 * Best practices and concepts
 * CI/CD
@@ -340,16 +347,17 @@ version: 1
 - customer side .boto config file
 
 ### Cloud Storage Signed URL
-- IAM - Service accounts - create - Storage admin - create a key json - local in console
+1. IAM - Service accounts - create - Storage admin - create a key json - local in console
 ```sh
 [root@server1]# gsutil signurl -d 10m keyfile.json gs://my-bucket-project1/1.png
 ```
-- copy and paste signed URL 
+2. copy and paste signed URL 
 
 ### Object Versioning and Lifecycle
 - retrieve objects that are deleted or overwritten
 - Applied to bucket level
 - Object keeps same name but paired with UIN
+
 ```sh
 [root@server1]# gsutil versioning get gs://
 [root@server1]# gsutil versioning set on gs://
@@ -499,7 +507,48 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Incredibly fast and scalable
 - Very inexpensive (first 2 million requests per month are free)
 
+# Cloud Managed Databases
+*Mapping Storage Types - at a Glance*
+- Unstructured Data - Cloud Storage
+- Relational Data (SQL) - Cloud SQL and Spanner
+- Non-relational (NoSQL) data - BigTable and Datastore (Firestore)
+- Big data analysis (SQL queries) - Google BigQuery
+
+*Questions to determine type of database*
+- Main Factors:
+  - Scalability/availability/performance
+  - Relational (RDBMS/SQL) vs. non-relational (NoSQL)
+  - Transactional vs. Analytical
+- Solution scaling
+  - Availability, capacity, performance
+  - Horizontal vs. vertical scaling
+- Type of data?
+  - Relational, non-relational
+  - Relational = tables and rows, spreadsheets
+    - Strong Consistency
+  - Non-relational = non-fixed relationships, JSON format
+    - Eventual consistency
+  - Interaction Method?
+    - OLTP - Online Transaction Processing - Transactional
+    - OLAP - Online Analytical PRocessing - Analytical
+    - Transactional = Operational data
+      - Relatively simple queries
+      - medical records, database, inventory
+    - Analytical = Consolidation data
+      - Complex queries
+      - Business insights, market trends, data warehousing
+
 ## Cloud SQL
+- read replica and failover instance are separate entities
+  - Read Replica is a copy of the primary instance 
+  - Failover will be in different zone 
+    - becomes primary 
+    - Master changes are replicated to failover 
+    - increase failover size for replication lag
+    - Shard database so write operations are shared
+  - Automatic storage increase checkbox
+  - Larger disk size boost IOPs 
+  - Overprovision database server/cost more but no downtime
 - A fully-managed MySQL and PostgreSQL database service that is built on the strength and reliability of Google’s infrastructure.
 - Cloud SQL delivers high performance and scalability with up to 10TB of storage capacity, 25,000 IOPS, and 208GB of RAM per instance.
 - Second Generation instances support MySQL 5.6 or 5.7, and provide up to 208 GB of RAM and 10 TB data storage, with the option to automatically increase the storage size as needed.
@@ -508,14 +557,18 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - No duplication
 - Online transaction processing (OLTP)
 - IOPS increases with increase disk space, does not require hardware modification
+- Hard cap 10TB for single Cloud SQL instance - more vertical than horizontal - single region only
 
 ## Cloud Spanner
 - Cloud Spanner is a fully managed, mission-critical, relational database service that offers transactional consistency at global scale, schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous replication for high availability.
 - Gain horizontal scaling without migration from relational to NoSQL databases
+- Cross-region availabilty More expensive than Cloud SQL
 
-## Cloud Datastore
+## Cloud Datastore (firestore)
 - A scalable, fully-managed NoSQL document database for your web and mobile applications.
 - Semi-structured application data
+- Ideal for web and mobile applications
+- *Optimize query - gcloud datastore index-cleanup*
 - Hierarchical data
 - Durable key-value data
 - Product catalogs that provide real-time inventory and product details for a retailer.
@@ -534,6 +587,12 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - BigTable has full ETL capability. In this case also no need for autoscaling
 
 ## Cloud BigQuery
+**Exam Perspective**
+- More detail on managing BigQuery resources and users
+- Properly managing access to resources, cross project.  Creating and using data with permissions
+- [bq ls -j -a (myproject)]
+- [bq mk --time_partitioning_type=DAY --time_partitioning_expiration=259200 [DATASET].[TABLE]]
+- *Mountkirk Games and TerramEarth case studies*
 - A scalable, fully-managed Enterprise Data Warehouse (EDW) with SQL and fast response times.
 - Interactive querying online analytical processing (OLAP) workloads up to petabyte-scale
 - Data warehousing and data analysis service
@@ -543,6 +602,13 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Easy to use: no indexes required, simple schemas
 - NoOps: no need to provision anything
 
+## Memorystore
+- in-memory managed Redis database
+## Filestore
+- managed file storage/sharing instance
+## Non-managed options - Microsoft SQL Server
+- Manually create high availability and failover cluster servers in different subnets, but in same zone
+- High availability and Always On
 
 # CI/CD
 ## GCP Dataflow
