@@ -8,7 +8,7 @@ Table of Contents
 - [Billing](#billing)
 - [Stackdriver](#stackdriver)
 - [Cloud Storage](#cloud-storage)
-- [Cloud SQL](#cloud-managed-databases)
+- [Cloud Managed Databases](#cloud-managed-databases)
 - [Global Resources](#global-resources)
 - [IaaS](#iaas)
 - [GCP Networking](#gcp-networking)
