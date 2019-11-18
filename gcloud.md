@@ -11,6 +11,7 @@ Table of Contents
 - [Cloud Managed Databases](#cloud-managed-databases)
 - [Global Resources](#global-resources)
 - [IaaS](#iaas)
+- [Cloud Compute Engine](#google-cloud-compute)
 - [GCP Networking](#gcp-networking)
 - [PaaS](#paas)
 - [CI/CD](#cicd)
