@@ -397,7 +397,7 @@ version: 1
 - Cloud BigQuery
 
 # IaaS
-### Google Cloud Compute
+# Google Cloud Compute
 - Infrastructure as a Service (IaaS)
 - On-demand pricing, Sustained use discount, Committed use discount, Preemptible VM
 - Disks: Standard, SSD, Local SSD - Pay for allocation
@@ -405,6 +405,42 @@ version: 1
 - Custom applications
 - Lift and Shift
 - N1-standard systems have CPU # in the name with 4x# for RAM
+- GCE (Google Compute Engine), GKE (Google Kubernetes engine), GAE(Google App Engine) all run on VMs
+
+## Disks
+- Persistent Disks - Network attached storage - boot option only - SSD option available - Preserve data after deleting - Encrypted - Can be a file server
+- Local SSD - Highest performance, 375GB in size only - scratch disk - encrypt google only
+- Cloud Storage buckets - GCS Fuse application as a local disk. lower performance, multi-regional
+
+## Images
+- images are not limited to zone, boot disks
+- images are available across projects
+- Public and Custom images - ie. Debian, Centos, Windows server 2019
+- image creation offline only, create an image from a modified image
+- Deprecating images
+  - Deprecated - still works but gives warning
+  - Obsolete - new users cannot use it - error if attempt to use, existing links still work
+  - Deleted - all users cannot use it
+  - Active - mark deprecated image active again (command line only)
+
+## Snapshots
+- periodic incremental backup of existing disk instance
+- create while running
+- share across projects via command line only
+- create instance copies in new zone
+
+## Startup and shutdown scripts
+- Automate software install, updates, services.  Customize VMs
+- key component in instanace groups and scaling capabilities
+- Shutdown process like stopping DBs or copy data to cloud storage
+
+## Preemptible VM
+- 24 hours max
+- can be shut down at anytime, disposable, fault-tolerant, batch processing workload
+- fixed pricing - 80% off regular
+- use smaller machine types, jobs offpeak times, fault tolerance tests 
+- Preserve disk on machine termination
+- use shutdown scripts
 
 # GCP Networking
 ## VPC networking
