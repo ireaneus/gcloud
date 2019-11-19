@@ -499,6 +499,8 @@ Target proxies are referenced by one or more global forwarding rules and route t
 
 ## Cloud CDN
 - Configured when setting up an HTTP(S) load balancer
+- Caches web and application data in a CDN locations
+ - Cache Miss, Cache Fill, Cache Key - same content listed in different urls (Host, Protocol, Query)
 - CDN is cheaper for network egres traffic
 
 ## Cloud VPN
@@ -668,6 +670,8 @@ Apache Beam
 - It can setup HDFS on cloud storage buckets
 
 ## Deployment manager
+- Infrastructure as a code.  Terraform and Ansible
+- REST to yaml converter
 - Declarative parallel processing schema files
 - yaml Declarative language
 - Reliable reproducable - deployment Manager
