@@ -45,6 +45,10 @@ Study areas
   * More on Datastore and Cloud SQL - how to optimize performance and scale it
 * Cloud endpoint
 * Best practices and concepts
+  * Kubernetes - alpine, update, install, copy source files in that order
+    * tag different versions not just latest
+    * pull polices to IfNotPresent not Always
+    * create a new cluster/pool if need to upgrade node to a new machine type
 * CI/CD
 * Tensorflow
 * Automate deployments using Google App Engine
