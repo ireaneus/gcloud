@@ -3,9 +3,9 @@
 Table of Contents
 - [Websites](#websites)
 - [Exam Study notes](gcloud.md)
-- [Case Study - dress4win](gcloud-dress4win)
-- [Case Study - Mountkirk Games](gcloud-mountkirk)
-- [Case Study - TerramEarth](gcloud-terramearth)
+- [Case Study - dress4win](gcloud-dress4win.md)
+- [Case Study - Mountkirk Games](gcloud-mountkirk.md)
+- [Case Study - TerramEarth](gcloud-terramearth.md)
 
 ### Websites
 
