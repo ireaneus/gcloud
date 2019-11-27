@@ -64,3 +64,41 @@ right users, we are not con¡dent that our marketing is
 targeting the right users, and we are not selling enough
 premium Blast-Ups inside the games, which dramatically
 impacts our revenue.
+
+
+### What are their goals (Solution Concept)
+- building new game, no migration necessary
+- environments
+	- Create game backed on GCE
+		- Hardened Linux distro
+		- NoSQL transactional database - Datastore (Firestore)
+	- Separate analytics setup 
+	- Different storage service for each
+
+### What do they care about
+- Scaling
+- Measuring performance - increase efficiency of solutions - Stackdriver Monitoring/logging
+- Reliable experience for users - no downtime
+- Managed services
+- Analytics - usage patterns
+- Global footprint
+
+### Business requirements
+- Increase to a global footprint
+	- multiple regional *instance group* backends
+		- Single global *HTTP load balancer*
+	- multi-regional ingest/storage options
+		- Pub/Sub, Datastore, bigquery, cloud storage
+
+### Exam information 
+> **Cloud Datastore (Firestore) - NoSQL transactional database** game user profiles and game states
+> **Store in BigQuery**
+- BigQuery vs Bigtable
+	- Bigtable = millisecond response time
+	- BigQuery = response measured in seconds, scales
+	- BigQuery reading from Bigtable also a valid answer, but not best answer
+
+> Process incoming data streaming  - Pub/Sub process with Dataflow
+> Process data that arrives late because of slow mobile networks
+	- Pub/Sub *scales and buffers messages*
+	- Dataflow *accounts for late/out of order data
