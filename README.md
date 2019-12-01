@@ -18,3 +18,6 @@ Table of Contents
 | --- | --- | --- | --- | --- |
 | [appengine](https://cloud.google.com/appengine/docs/standard/) | [compute](https://cloud.google.com/compute/docs/vpn/overview) | [dns](https://cloud.google.com/dns/overview) | [containers](https://cloud.google.com/container-engine/reference/rest/) | [functions](https://cloud.google.com/functions/docs/concepts/overview) |
 
+- [Codelabs](https://codelabs.developers.google.com) - filter by 'Cloud'
+- [GCSA](https://gcp.solutions) Reference
+- [GCP in 4 words or less](https://github.com/gregsramblings/google-cloud-4-words)
