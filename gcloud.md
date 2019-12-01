@@ -19,6 +19,9 @@ Table of Contents
 # Exam Information
 Exam tested on:
 - Exam is 50 questions - pass or fail
+- 2.5 minutes per question - mark for review
+- Read all Details carefully
+- eliminate obvious wrong answers
 - multiple choice 
 
 You are tested on your:
