@@ -66,9 +66,8 @@
 	- BigQuery = response measured in seconds, scales
 	- BigQuery reading from Bigtable also a valid answer, but not best answer
 
-*Process incoming data streaming  - Pub/Sub process with Dataflow*
-*Process data that arrives late because of slow mobile networks*
-
+>Process incoming data streaming  - Pub/Sub process with Dataflow
+>Process data that arrives late because of slow mobile networks
 - Pub/Sub *scales and buffers messages*
 - Dataflow *accounts for late/out of order data
 
