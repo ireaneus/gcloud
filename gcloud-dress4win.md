@@ -6,7 +6,8 @@
 >For the first phase of their migration to the cloud, Dress4Win is moving their development and test environments. They are also building a disaster recovery site, because their current infrastructure is at a single location. They are not sure which components of their architecture they can migrate as is and which components they need to change before migrating them.
 
 ## Existing technical environment
-> The Dress4win application is served out of a single datacenter location
+*The Dress4win application is served out of a single datacenter location*
+
 ### Databases:
 - MySQL - user data, inventory, static data
     - Redis - metadata, social graph, caching
@@ -46,15 +47,15 @@
 
 ## Business Requirements
 - Build a reliable and reproducible environment with scaled parity of production.
-  - # Deployment manager
+  - *Deployment manager*
 
 - Improve security by defining and adhering to a set of security and Identity and Access Management (IAM) best practices for cloud.
 
 - Improve business agility and speed of innovation through rapid provisioning of new resources.
-  - # Managed instance groups, Autoscaling through load balancers
+  - *Managed instance groups, Autoscaling through load balancers*
 
 - Analyze and optimize architecture for performance in the cloud.
-  - # app-engine - kubernetes
+  - *app-engine - kubernetes*
 
 
 ## Technical Requirements
@@ -92,6 +93,7 @@
 - Messaging
 - Social notifications
 - Events
+
 ### Miscellaneous servers:
 - Deployment manager Jenkins, Stackdriver monitoring, Compute engine and private network hosts bastion hosts, Cloud Security scanners - App engine scanners. security scanners
 
