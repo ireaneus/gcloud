@@ -1,17 +1,17 @@
 # TerramEarth Case Study
 
 ## Company Overview
-TerramEarth manufactures heavy equipment for the mining and agricultural industries. About 80% of their business is from mining and 20% from agriculture. They currently have over 500 dealers and service centers in 100 countries. Their mission is to build products that make their customers more productive.
+>TerramEarth manufactures heavy equipment for the mining and agricultural industries. About 80% of their business is from mining and 20% from agriculture. They currently have over 500 dealers and service centers in 100 countries. Their mission is to build products that make their customers more productive.
 
 ## Solution Concept
-There are 20 million TerramEarth vehicles in operation that collect 120 fields of data per second. Data is stored locally on the vehicle and can be accessed for analysis when a vehicle is serviced. The data is downloaded via a maintenance port. This same port can be used to adjust operational parameters, allowing the vehicles to be upgraded in the field with new computing modules.
+>There are 20 million TerramEarth vehicles in operation that collect 120 fields of data per second. Data is stored locally on the vehicle and can be accessed for analysis when a vehicle is serviced. The data is downloaded via a maintenance port. This same port can be used to adjust operational parameters, allowing the vehicles to be upgraded in the field with new computing modules.
 
-Approximately 200,000 vehicles are connected to a cellular network, allowing TerramEarth to collect data directly. At a rate of 120 fields of data per second, with 22 hours of operation per day, TerramEarth collects a total of about 9 TB/day from these connected vehicles.
+>Approximately 200,000 vehicles are connected to a cellular network, allowing TerramEarth to collect data directly. At a rate of 120 fields of data per second, with 22 hours of operation per day, TerramEarth collects a total of about 9 TB/day from these connected vehicles.
 
 ## Existing Technical Environment
-TerramEarth’s existing architecture is composed of Linux based systems that reside in a data center. These systems gzip CSV ¡les from the field and upload via FTP, transform and aggregate them, and place the data in their data warehouse. Because this process takes time, aggregated reports are based on data that is 3 weeks old.
+>TerramEarth’s existing architecture is composed of Linux based systems that reside in a data center. These systems gzip CSV ¡les from the field and upload via FTP, transform and aggregate them, and place the data in their data warehouse. Because this process takes time, aggregated reports are based on data that is 3 weeks old.
 
-With this data, TerramEarth has been able to preemptively stock replacement parts and reduce unplanned downtime of their vehicles by 60%. However, because the data is stale, some customers are without their vehicles for up to 4 weeks while they wait for replacement parts.
+>With this data, TerramEarth has been able to preemptively stock replacement parts and reduce unplanned downtime of their vehicles by 60%. However, because the data is stale, some customers are without their vehicles for up to 4 weeks while they wait for replacement parts.
 
 ## Business Requirements
 - Decrease unplanned vehicle downtime to less than one week
@@ -56,3 +56,18 @@ With this data, TerramEarth has been able to preemptively stock replacement part
  
 ## Executive statement:
 >Our competitive advantage has always been in our manufacturing process, with our ability to build better vehicles for lower cost than our competitors. However, new products with different approaches are constantly being developed, and I’m concerned that we lack the skills to undergo the next wave of transformations in our industry. My goals are to build our skills while addressing immediate market needs through incremental innovations.
+
+### What are their goals?
+- Reduce vehicle downtime 
+  - Get data off vehicle into analytics Faster
+- Share data with dealer network
+- Partnerships with other companies
+
+### Current setup:
+- Collecting analytics on vehicles
+  - increase efficiency, predict breakdowns and pre-stage replacement parts
+- 20 million vehicles - 120 fields per second
+  - Stored locally, uploaded when at dealer
+  - Data sits on vehicle until service
+- 200,000 use cellular connection
+  - streaming data 9TB per day upload
