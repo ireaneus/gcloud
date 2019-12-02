@@ -69,5 +69,5 @@
 >Process incoming data streaming  - Pub/Sub process with Dataflow
 >Process data that arrives late because of slow mobile networks
 - Pub/Sub *scales and buffers messages*
-- Dataflow *accounts for late/out of order data
+- Dataflow *accounts for late/out of order data*
 
