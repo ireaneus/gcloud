@@ -1,7 +1,7 @@
 # Google Cloud Certified Professional Cloud Architect
 [Back](README.md) to README.md
 
-Table of Contents
+## Table of Contents
 - [Exam info](#exam-information)
 - [Core Management Services](#core-management-services)
 - [Cloud IAM](#cloud-iam)
@@ -16,7 +16,7 @@ Table of Contents
 - [PaaS](#paas)
 - [CI/CD](#cicd)
 
-# Exam Information
+## [Exam Information](#table-of-contents)
 Exam tested on:
 - Exam is 50 questions - pass or fail
 - 2.5 minutes per question - mark for review
@@ -69,7 +69,7 @@ Study areas
 * With continuous deployment, revisions are deployed to a production environment automatically without explicit approval from a developer, making the entire software release process automated
 * Before you can make requests to Storage Transfer Service, you must make sure the Cloud Storage Transfer Service API is enabled for your project, and that your application is set up for authorization, using the OAuth 2.0 protocol.
 
-# Core Management Services
+## [Core Management Services](#table-of-contents)
 ### Resource Hierarchy
 - Core principles
   - Each child object has only one parent
@@ -125,7 +125,7 @@ Everything that is created and used on GCP
 - Caps on resources on a per project basis
 - Quota can be increased via support ticket
 
-# Cloud IAM
+## [Cloud IAM](#table-of-contents)
 ### IAM
 - Use more restricted rights at the higher levels
 - Resources added at lower levels will inherit those restrictions
@@ -222,7 +222,7 @@ version: 1
 - more than 1 organization administrator
 - separate production and development environments into separate projects
 
-# Billing
+## [Billing](#table-of-contents)
 ### Billing + Cloud IAM
 - Assigned mostly at organization level or within billing account
 - Billing roles within Cloud IAM
@@ -234,7 +234,7 @@ version: 1
 - Export to Cloud storage and bigquery
 - set budgets and alerts
 
-# Stackdriver
+## [Stackdriver](#table-of-contents)
 **Products**
 - Logging
 - Monitoring
@@ -249,7 +249,7 @@ version: 1
 - Determine monitoring needs in advance
 - IAM controls are separate for stackdriver
 
-## StackDriver Logging
+### StackDriver Logging
 *Exam Perspective*
 - IAM Roles - Logging Admin, Logs Viewer, Logs Writer, Logs Configuration Writer
 - *Exports* - Pub/Sub, BigQuery, Cloud Storage
@@ -272,7 +272,7 @@ version: 1
 > Stackdriver Logging is part of the Stackdriver suite of products in Google Cloud Platform (GCP). It includes storage for logs, a user interface called the Logs Viewer, and an API to manage logs programmatically. Stackdriver Logging lets you read and write log entries, search and filter your logs, export your logs, and create logs-based metrics.
 - Real-time log management and analysis
 
-## StackDriver Monitoring
+### StackDriver Monitoring
 **Exam Perspective**
 - Troubleshoot reachability with external sources - uptime checks
 - Familiar with the logging/monitoring agent
@@ -287,7 +287,7 @@ version: 1
 - Premium 30 days of logging admin.
 - 400 days of non-admin logs
 
-## StackDriver Error reporting
+### StackDriver Error reporting
 - Stackdriver Error Reporting aggregates and displays errors produced in your running cloud services.
 - Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go. To report errors from Android and iOS client applications, we recommend setting up Firebase Crash Reporting.
 - Stackdriver Error Reporting is Generally Available for Google App Engine standard environment and is a Beta feature for Google App Engine flexible environment, Google Compute Engine, and AWS EC2.
@@ -295,7 +295,7 @@ version: 1
 - Information in Stackdriver Error Reporting is retained for 30 days.
 - Error Reporting displays errors for the currently-selected Cloud Platform Console project. It does not support Stackdriver accounts.
 
-## StackDriver Trace
+### StackDriver Trace
 **Exam Perspective**
 - Finds performance bottlenecks - latency in load times
 - Collect data from Google App Engine (GAE), Google HTTTP load balancers, or appw with Stackdriver Trace SDK
@@ -308,7 +308,7 @@ version: 1
 - Generate custom analysis reports that show an overview of latency data for all or a subset or requests, and allow you to compare two different sets of latency data.
 - Traces are stored for 30 days.
 
-# Cloud Storage
+## [Cloud Storage](#table-of-contents)
 - A scalable, fully-managed, highly reliable, and cost-efficient object / blob store.
 - Images, pictures, and videos, Objects and blobs, Unstructured data
 - Storing and streaming multimedia
@@ -376,7 +376,7 @@ version: 1
 [root@server1]# gsutil -m rewrite -r -s NEARLINE gs://bucket/*
 ```
 
-# Global resources
+## [Global Resources](#table-of-contents)
 ### Sometimes Google Cloud services seem interchangeable
 - BigTable or DataStore
 - BigQuery or Cloud SQL
@@ -404,8 +404,8 @@ version: 1
 - Cloud Datastore
 - Cloud BigQuery
 
-# IaaS
-# Google Cloud Compute
+## [IaaS](#table-of-contents)
+### Google Cloud Compute
 - Infrastructure as a Service (IaaS)
 - On-demand pricing, Sustained use discount, Committed use discount, Preemptible VM
 - Disks: Standard, SSD, Local SSD - Pay for allocation
@@ -415,12 +415,12 @@ version: 1
 - N1-standard systems have CPU # in the name with 4x# for RAM
 - GCE (Google Compute Engine), GKE (Google Kubernetes engine), GAE(Google App Engine) all run on VMs
 
-## Disks
+### Disks
 - Persistent Disks - Network attached storage - boot option only - SSD option available - Preserve data after deleting - Encrypted - Can be a file server
 - Local SSD - Highest performance, 375GB in size only - scratch disk - encrypt google only
 - Cloud Storage buckets - GCS Fuse application as a local disk. lower performance, multi-regional
 
-## Images
+### Images
 - images are not limited to zone, boot disks
 - images are available across projects
 - Public and Custom images - ie. Debian, Centos, Windows server 2019
@@ -431,18 +431,18 @@ version: 1
   - Deleted - all users cannot use it
   - Active - mark deprecated image active again (command line only)
 
-## Snapshots
+### Snapshots
 - periodic incremental backup of existing disk instance
 - create while running
 - share across projects via command line only
 - create instance copies in new zone
 
-## Startup and shutdown scripts
+### Startup and shutdown scripts
 - Automate software install, updates, services.  Customize VMs
 - key component in instanace groups and scaling capabilities
 - Shutdown process like stopping DBs or copy data to cloud storage
 
-## Preemptible VM
+### Preemptible VM
 - 24 hours max
 - can be shut down at anytime, disposable, fault-tolerant, batch processing workload
 - fixed pricing - 80% off regular
@@ -450,8 +450,8 @@ version: 1
 - Preserve disk on machine termination
 - use shutdown scripts
 
-# GCP Networking
-## VPC networking
+## [GCP Networking](#table-of-contents)
+### VPC networking
 - You can create up to five networks per project
 - Auto mode VPC networks have a single, automatically created subnet in each region of the VPC network
 - For custom mode VPC networks, create a network, then create the subnets that you want within a region
@@ -465,18 +465,18 @@ version: 1
 - Machines in different networks can only communicate with public IPs
 - Machines without a public IP can only be accessed within a network
 
-## VPC Service Controls
+### VPC Service Controls
 - Mitigates the following security risks
 	- Access from unathorized networks using stolen creds
 	- Data exfiltration by maliciaous insiders or compromised code.
 	- Public exposure of private data caused by misconfigured Cloud IAM policies
 
-## Firewalls
+### Firewalls
 - Single firewall for entire VPC - implied deny all ingress, implied allow all egres
 - To access load-balanced servers, a firewall rule must be created for the appropriate networks
 - Best practice is to create firewall rules allowing traffic only from GCP Load Balancer networks
 
-## Load Balancers
+### Load Balancers
 - Can be created for HTTP, TCP, or UDP
 - Can span multiple regions or balance traffic to machines in multiple zones within a single region
 - Can send traffic to multiple machines managed by one or more instance groups forming a back-end service
@@ -505,24 +505,24 @@ version: 1
 
 Target proxies are referenced by one or more global forwarding rules and route the incoming HTTP or HTTPS requests to a URL map. You can manage target proxies by using either the gcloud command-line tool or the REST API methods.
 
-## Cloud DNS
+### Cloud DNS
 - Allows you to manage your domains right from GCP
 - Map domains and subdomains to load balancers, cloud storage buckets, or App Engine applications
 - 100% SLA uptime
 
-## Cloud CDN
+### Cloud CDN
 - Configured when setting up an HTTP(S) load balancer
 - Caches web and application data in a CDN locations
  - Cache Miss, Cache Fill, Cache Key - same content listed in different urls (Host, Protocol, Query)
 - CDN is cheaper for network egres traffic
 
-## Cloud VPN
+### Cloud VPN
 - Cloud VPN allows secure access to VPC networks 
 - Can use a VPN to connect a GCP network to your local network using direct connect or interconnect see slide 54/55
 - Can use a VPN to connect different GCP networks
 
-# PaaS 
-## Google Container Engine
+## [PaaS](#table-of-contents) 
+### Google Container Engine
 - Used to deploy containerized applications
 - Applications deployed into a cluster of Compute Engine virtual machines
 - Application configuration is defined using Kubernetes open-source, orchestration framework
@@ -530,7 +530,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - GKE is more flexible than App Engine, but also less automated
 - Especially useful for hybrid deployments
 
-## Google App Engine Standard
+### Google App Engine Standard
 - Each service is deployed independently
 - Services scale independently
 - Different languages can be used for different services
@@ -542,7 +542,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Will scale to zero instances when there is no traffic
 - free tier
 
-## Google App Engine Flex
+### Google App Engine Flex
 - Uses Docker containers for deploying services
 - Supports any language that will run in a Docker container
 - Google provides preconfigured Docker containers for Python, Java, PHP, Go, Ruby, .NET, and NodeJS
@@ -551,7 +551,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Autoscaling enabled
 - App Engine Flexible supports custom images
 
-## Google Cloud functions
+### Google Cloud functions
 - Serverless environments for running Node.js functions
 - Just upload the code
 - Microservice architecture where each function performs one job
@@ -559,7 +559,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Incredibly fast and scalable
 - Very inexpensive (first 2 million requests per month are free)
 
-# Cloud Managed Databases
+## [Cloud Managed Databases](#table-of-contents)
 *Mapping Storage Types - at a Glance*
 - Unstructured Data - Cloud Storage
 - Relational Data (SQL) - Cloud SQL and Spanner
@@ -590,7 +590,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
       - Complex queries
       - Business insights, market trends, data warehousing
 
-## Cloud SQL
+### Cloud SQL
 - read replica and failover instance are separate entities
   - Read Replica is a copy of the primary instance 
   - Failover will be in different zone 
@@ -611,12 +611,12 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - IOPS increases with increase disk space, does not require hardware modification
 - Hard cap 10TB for single Cloud SQL instance - more vertical than horizontal - single region only
 
-## Cloud Spanner
+### Cloud Spanner
 - Cloud Spanner is a fully managed, mission-critical, relational database service that offers transactional consistency at global scale, schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous replication for high availability.
 - Gain horizontal scaling without migration from relational to NoSQL databases
 - Cross-region availabilty More expensive than Cloud SQL
 
-## Cloud Datastore (firestore)
+### Cloud Datastore (firestore)
 - A scalable, fully-managed NoSQL document database for your web and mobile applications.
 - Semi-structured application data
 - Ideal for web and mobile applications
@@ -628,7 +628,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Transactions based on ACID properties, for example, transferring funds from one bank account to another.
 - 1GB per month free tier
 
-## Cloud BigTable
+### Cloud BigTable
 - Cloud Bigtable is ideal for applications that need very high throughput and scalability for non-structured key/value data, where each value is typically no larger than 10 MB. Cloud Bigtable also excels as a storage engine for batch MapReduce operations, stream processing/analytics, and machine-learning applications.
 - Cloud Bigtable is Google's NoSQL Big Data database service. It's the same database that powers many core Google services, including Search, Analytics, Maps, and Gmail. Bigtable is designed to handle massive workloads at consistent low latency and high throughput, so it\'s a great choice for both operational and analytical applications, including IoT, user analytics, and financial data analysis.
 - Wide-column NoSQL datastore similar to Cassandra or HBase
@@ -638,7 +638,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Datasets starting at 1TB
 - BigTable has full ETL capability. In this case also no need for autoscaling
 
-## Cloud BigQuery
+### Cloud BigQuery
 **Exam Perspective**
 - More detail on managing BigQuery resources and users
 - Properly managing access to resources, cross project.  Creating and using data with permissions
@@ -654,35 +654,35 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Easy to use: no indexes required, simple schemas
 - NoOps: no need to provision anything
 
-## Memorystore
+### Memorystore
 - in-memory managed Redis database
-## Filestore
+### Filestore
 - managed file storage/sharing instance
-## Non-managed options - Microsoft SQL Server
+### Non-managed options - Microsoft SQL Server
 - Manually create high availability and failover cluster servers in different subnets, but in same zone
 - High availability and Always On
 
-# CI/CD
-## GCP Dataflow
+## [CI/CD](#table-of-contents)
+### GCP Dataflow
 - Cloud Dataflow is a fully-managed service for transforming and enriching data in stream (real time) and batch (historical) modes with equal reliability and expressiveness -- no more complex workarounds or compromises needed. And with its serverless approach to resource provisioning and management, you have access to virtually limitless capacity to solve your biggest data processing challenges, while paying only for what you use.
 - Data Flow Fully-managed data processing service, supporting both stream and batch execution of pipelines
 Apache Beam
 - ETL - The process of extracting data from source systems and bringing it into the data warehouse is commonly called ETL, which stands for extraction, transformation, and loading
 - Dataflow is a unified programming model and a managed service for developing and executing a wide range of data processing patterns including ETL, batch computation, and continuous computation. Cloud Dataflow frees you from operational tasks like resource management and performance optimization.
 
-## Cloud Pub/Sub
+### Cloud Pub/Sub
 - Publish/Subscribe service
 - Cloud Pub/Sub is a simple, reliable, scalable foundation for stream analytics and event-driven computing systems. As part of Google Cloud’s stream analytics solution, the service ingests event streams and delivers them to Cloud Dataflow for processing and BigQuery for fanalysis as a data warehousing solution.
 - Can be used to queue up and store messages up to 7 days
 - Balancing workloads in network clusters Implementing asynchronous workflows Distributing event notifications Refreshing distributed caches Logging to multiple systems Data streaming from various processes or devices Reliability improvement
 - Does not work with synchronous workflows
 
-## Cloud Dataproc
+### Cloud Dataproc
 - Google Cloud Dataproc lets you provision Apache Hadoop clusters and connect to underlying analytic data stores.
 - Cloud Dataproc is a managed framework that runs on the Google Cloud Platform and ties together several popular tools for processing data, including Apache Hadoop, Spark, Hive, and Pig. Cloud Dataproc has a set of control and integration mechanisms that coordinate the lifecycle, management, and coordination of clusters. Cloud Dataproc is integrated with the YARN application manager to make managing and using your clusters easier.
 - It can setup HDFS on cloud storage buckets
 
-## Deployment manager
+### Deployment manager
 - Infrastructure as a code.  Terraform and Ansible
 - REST to yaml converter
 - Declarative parallel processing schema files
@@ -694,7 +694,7 @@ Apache Beam
 - Automate repetitive tasks
 - Fix problems with code
 
-## Blue/Green Deployment
+### Blue/Green Deployment
 - Allow new revisions to be deployed with less risk and no downtime
 - There are two copies of the production environment
 - Blue environment is taking requests
@@ -710,14 +710,14 @@ Apache Beam
 - Can easily request any version by including the version in the URL
 - Testing can be done on new versions before migrating the load to them
 
-## A/B Testing
+### A/B Testing
 - A/B testing allows multiple versions of a program to run at the same time
 - Test the new version with a portion of the users 
 - Compare usage and errors of the two versions
 - Allows developers to get feedback and testing from real users prior to fully committing to a new version
 - In App Engine, use traffic-splitting for A/B testing
 
-## Canary Release
+### Canary Release
 - A new version of a service is put into production alongside old versions
 - A small subset of select traffic is routed to the canary release
 - Canary releases help developers know how a new version will perform when put into production
@@ -725,17 +725,17 @@ Apache Beam
 - Use a microservice architecture in App Engine
 - Each small service can be deployed separately from the other services in the application
 
-## Autoscaling
+### Autoscaling
 - Graceful exit on autoscaling shrink event by running shutdown script to redirect incoming traffic at load balancer, and flush cache prior to exit.
 - The autoscaler will collect information based on the policy, compare it to your desired target utilization, and determine if it needs to perform scaling
 - Autoscaler controls managed instance group
 
-## Instance grouping
+### Instance grouping
 - Regional managed instance groups improve your application availability by spreading your instances across three zones. 
 - Managed Instance group - instance group updater apply rolling updates - canary update rollback zero downtime
 - All unmanaged groups are used for is load balancing across dissimilar instances
 
-## Connection draining
+### Connection draining
 You can enable connection draining on backend services to ensure minimal interruption to your users when an instance is removed from an instance group, either manually or by an autoscaler. To enable connection draining, you set a timeout duration during which the backend service preserves existing sessions being handled by endpoints on an instance that will be removed. The backend service preserves these sessions until the timeout duration has elapsed, allowing user sessions to gracefully terminate, but preventing new connections to the instance. After the timeout duration is reached, the instance is terminated and all remaining connections are forcibly closed. You can set a timeout duration between 1 to 3600 seconds.
 
 - doug@roitraining.com
@@ -759,5 +759,5 @@ You can enable connection draining on backend services to ensure minimal interru
 | Analytics warehouse (SQL) | # BigQuery |
 | Personalization | # Cloud Machine Learning Engine |
 
-## Tensorflow
+### [Tensorflow](#table-of-contents)
 TensorFlow™ is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them
