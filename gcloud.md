@@ -465,6 +465,12 @@ version: 1
 - Machines in different networks can only communicate with public IPs
 - Machines without a public IP can only be accessed within a network
 
+## VPC Service Controls
+- Mitigates the following security risks
+	- Access from unathorized networks using stolen creds
+	- Data exfiltration by maliciaous insiders or compromised code.
+	- Public exposure of private data caused by misconfigured Cloud IAM policies
+
 ## Firewalls
 - Single firewall for entire VPC - implied deny all ingress, implied allow all egres
 - To access load-balanced servers, a firewall rule must be created for the appropriate networks
