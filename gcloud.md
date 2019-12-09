@@ -64,7 +64,9 @@ Study areas
 * Windows Server requires scripts in GCS to be public https://cloud.google.com/compute/docs/startupscript
 * Endpoints Frees developers from writing wrapper to access App Engine resources from a mobile or web client
 * Kubernetes change the number of node in an existing cluster - gcloud container clusters resize new target number
+* Google Container Builder does not offer a way to push images to different clusters, they are published to Google Container Registry
 * If asked if changing machine type in kubernetes while cluster is running - migrate to new cluster
+* Helm is a package manager for Kubernetes templates
 * Continuous delivery is a DevOps software development practice where code changes are automatically built, tested, and prepared for a release to production.
 * With continuous deployment, revisions are deployed to a production environment automatically without explicit approval from a developer, making the entire software release process automated
 * Before you can make requests to Storage Transfer Service, you must make sure the Cloud Storage Transfer Service API is enabled for your project, and that your application is set up for authorization, using the OAuth 2.0 protocol.
@@ -520,6 +522,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Cloud VPN allows secure access to VPC networks 
 - Can use a VPN to connect a GCP network to your local network using direct connect or interconnect see slide 54/55
 - Can use a VPN to connect different GCP networks
+- Dynamic routing - 1 VPN gateway, 1 peer gateway, 1 cloud router
 
 ## [PaaS](#table-of-contents) 
 ### Google Container Engine
