@@ -568,6 +568,7 @@ Target proxies are referenced by one or more global forwarding rules and route t
 - Relational Data (SQL) - Cloud SQL and Spanner
 - Non-relational (NoSQL) data - BigTable and Datastore (Firestore)
 - Big data analysis (SQL queries) - Google BigQuery
+- memcached is for read database entries
 
 *Questions to determine type of database*
 - Main Factors:
